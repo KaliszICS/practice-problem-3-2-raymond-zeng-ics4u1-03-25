@@ -4,17 +4,17 @@ public class PracticeProblem {
 
 	}
 
-	public static int towerOfHanoi(int num) {
-		if (num < 3){
-			return -1;
+    public static int towerOfHanoi(int num) {
+        if (num < 3) {
+            return -1;
 		}
-        return CalculateNum(num);
-		
-		}
-	private static int CalculateNum(int num){
-		if (num == 1){
-			return 1;
-		}
-		return 2 * CalculateNum(num - 1) + 1;
-	}
+        if (num == 1) {
+            return 1;
+        }
+        int moves = 1;  
+        while (num > 1) {
+            moves = 2 * moves + 1;
+            num--; }
+        return moves;
+    }
 }
